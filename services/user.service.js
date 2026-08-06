@@ -3,7 +3,10 @@ const AppError = require('../utils/appError');
 
 const createUser = async (userData) => {
   const user = await User.create(userData);
-  return user;
+ const userObject = user.toObject();
+  delete userObject.password;
+  
+  return userObject;
 };
 
 const getAllUsers = async () => {
