@@ -4,7 +4,7 @@ const connectDB = require('./config/db.js');
 const errorHandler = require('./middleware/errorHandler.js');
 const userRoutes = require('./routes/user.routes.js');
 const applicationRoutes = require('./routes/application.routes.js');
-
+const jobRoutes = require('./routes/job.routes');
 
 const companyRoutes = require('./routes/company.routes.js');
 
@@ -17,7 +17,7 @@ app.use(express.json());
 
 app.use('/api/users', userRoutes);
 app.use('/api/applications', applicationRoutes);
-
+app.use('/api/jobs', jobRoutes);
 app.use('/api/companies', companyRoutes);
 
 app.use((req, res, next) => {
