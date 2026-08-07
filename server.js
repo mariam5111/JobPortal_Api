@@ -2,6 +2,8 @@ const express = require('express');
 const dotenv = require('dotenv');
 const connectDB = require('./config/db.js');
 const errorHandler = require('./middleware/errorHandler.js');
+const userRoutes = require('./routes/user.routes.js');
+const applicationRoutes = require('./routes/application.routes.js');
 
 
 const companyRoutes = require('./routes/company.routes.js');
@@ -12,6 +14,9 @@ connectDB();
 const app = express();
 app.use(express.json());
 
+
+app.use('/api/users', userRoutes);
+app.use('/api/applications', applicationRoutes);
 
 app.use('/api/companies', companyRoutes);
 
