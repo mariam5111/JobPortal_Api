@@ -1,3 +1,15 @@
+const validate = (schema) => (req, res, next) => {
+  const { error, value } = schema.validate(req.body, {
+    abortEarly: false,
+    stripUnknown: true,
+  });
+
+  if (error) {
+    return next(error);
+  }
+
+  req.body = value;
+  next();
 const AppError = require('../utils/appError');
 
 const validate = (schema) => {
@@ -12,5 +24,5 @@ const validate = (schema) => {
     next();
   };
 };
-
+}
 module.exports = validate;

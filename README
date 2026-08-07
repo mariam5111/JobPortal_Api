@@ -1,0 +1,22 @@
+Job Portal API
+
+A robust RESTful API for a Job Portal system built with **Node.js**, **Express.js**, and **MongoDB (Mongoose)**. The API manages Users, Companies, Jobs, and Job Applications .
+---
+
+## 🛠️ Tech Stack
+
+* **Backend Framework:** Node.js / Express.js
+* **Database:** MongoDB / Mongoose
+* **API Testing:** Postman
+
+---
+
+## 📌 Architecture & Features
+
+* **Service Layer Architecture:** Clean separation between Controllers, Services, and Models.
+* **Data Validation & Integrity:**
+  * Prevention of duplicate Company names or emails (`409 Conflict`).
+  * Strict Enum validations for Job types (`Full Time`, `Part Time`, `Remote`, `Internship`).
+* **Entity Relationships:**
+  * Jobs linked directly to Companies (`Company ID`).
+  * Applications linking Users to specific Jobs (`User ID` + `Job ID`).
