@@ -1,5 +1,5 @@
 const Job = require("../models/Job");
-
+const AppError = require('../utils/appError');
 const createJob = async (jobData) => {
      const job = await Job.create(jobData);
     return job;
