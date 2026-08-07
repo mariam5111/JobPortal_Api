@@ -10,6 +10,7 @@ const {
   deleteJob,
   closeJobController,
 } = require("../controllers/job.controller");
+const { validateJob } = require("../validators/job.validator");
 
 router.post("/", createJob);
 
